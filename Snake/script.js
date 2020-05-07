@@ -26,16 +26,17 @@ window.onload = function()
     function refreshCanvas()
     {     
         ctx.clearRect(0,0, canvasWidth, canvasHeight);
+        snakee.advance();
         snakee.draw();
         setTimeout(refreshCanvas, delay);
-    }
+    };
 
     function drawBlock(ctx, position)
     {
         let x = position[0] * blockSize;
         let y = position[1] * blockSize;
         ctx.fillRect(x, y, blockSize, blockSize);
-    }
+    };
 
     function Snake(body)
     {
@@ -53,7 +54,10 @@ window.onload = function()
         };
         this.advance = function()
         {
-            
+            let nextPosition = this.body[0].slice();
+            nextPosition[0] += 1;
+            this.body.unshift(nextPosition);
+            this.body.pop();
 
         };
 
