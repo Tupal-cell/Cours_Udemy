@@ -1,19 +1,18 @@
 window.onload = function()
 {
 
-    let canvasWidth = 900;
-    let canvasHeight = 600;
-    let blockSize = 30;
-    let ctx;
-    let delay = 100;
-    let snakee;
+    var canvasWidth = 900;
+    var canvasHeight = 600;
+    var blockSize = 30;
+    var ctx;
+    var delay = 100;
+    var snakee;
 
     init();
 
     function init()
     {
-
-        let  canvas = document.createElement('canvas');
+        var  canvas = document.createElement('canvas');
         canvas.width = canvasWidth;
         canvas.height = canvasHeight;
         canvas.style.border = "1px solid";
@@ -33,8 +32,8 @@ window.onload = function()
 
     function drawBlock(ctx, position)
     {
-        let x = position[0] * blockSize;
-        let y = position[1] * blockSize;
+        var x = position[0] * blockSize;
+        var y = position[1] * blockSize;
         ctx.fillRect(x, y, blockSize, blockSize);
     };
 
@@ -54,7 +53,7 @@ window.onload = function()
         };
         this.advance = function()
         {
-            let nextPosition = this.body[0].slice();
+            var nextPosition = this.body[0].slice();
             nextPosition[0] += 1;
             this.body.unshift(nextPosition);
             this.body.pop();
