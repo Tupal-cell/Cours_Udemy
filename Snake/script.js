@@ -68,13 +68,15 @@ window.onload = function()
                 case "up":
                     nextPosition[1] -= 1;
                     break;
+                default:
+                    throw("Invalid Direction");
             }
 
             this.body.unshift(nextPosition);
             this.body.pop();
         };
 
-        this.setDirection(newDirection)
+        this.setDirection = function(newDirection)
         {
             var allowedDirections;
 
@@ -88,9 +90,16 @@ window.onload = function()
                 case "up":
                     allowedDirections = ["left","right"];
                     break;
+                default:
+                    throw("Invalid Direction");
+
+            }
+            if(allowedDirections.indexOf(newDirection) > -1)
+            {
+                this.direction = newDirection;
             }
         };
-    };
+    }
 
     document.onkeydown = function handleKeyDown(e)
     {
@@ -111,7 +120,10 @@ window.onload = function()
             case 40:
                 newDirection = "down";
                 break;
+            default:
+                return;
         }
+        snakee.setDirection(newDirection);
     };
 }
 
