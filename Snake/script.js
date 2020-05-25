@@ -9,10 +9,9 @@ window.onload = function()
     var snakee;
 
     init();
-
-    function init()
+    function init () 
     {
-        var  canvas = document.createElement('canvas');
+        var canvas = document.createElement('canvas');
         canvas.width = canvasWidth;
         canvas.height = canvasHeight;
         canvas.style.border = "1px solid";
@@ -20,22 +19,21 @@ window.onload = function()
         ctx = canvas.getContext('2d');
         snakee = new Snake ([[6,4],[5,4],[4,4]]);
         refreshCanvas();
-    };
+    }
 
-    function refreshCanvas()
-    {     
-        ctx.clearRect(0,0, canvasWidth, canvasHeight);
-        snakee.advance();
+    function refreshCanvas ()
+    {
+        ctx.clearRect(0,0,canvasWidth, canvasHeight);
         snakee.draw();
-        setTimeout(refreshCanvas, delay);
-    };
+        setTimeout(refreshCanvas,delay);
+    }
 
-    function drawBlock(ctx, position)
+    function drawBlock(ctx, position,)
     {
         var x = position[0] * blockSize;
         var y = position[1] * blockSize;
-        ctx.fillRect(x, y, blockSize, blockSize);
-    };
+        ctx.fillRect(x,y,blockSize, blockSize);
+    }
 
     function Snake(body)
     {
@@ -44,21 +42,21 @@ window.onload = function()
         {
             ctx.save();
             ctx.fillStyle = "#ff0000";
-            for(var i = 0; i < this.body.lenght; i++);
+            for(var i=0; i<this.body.length; i++)
             {
                 drawBlock(ctx, this.body[i]);
             }
             ctx.restore();
 
         };
-        this.advance = function()
-        {
-            var nextPosition = this.body[0].slice();
-            nextPosition[0] += 1;
-            this.body.unshift(nextPosition);
-            this.body.pop();
+        // this.advance = function()
+        // {
+        //     var nextPosition = this.body[0].slice();
+        //     nextPosition[0] += 1;
+        //     this.body.unshift(nextPosition);
+        //     this.body.pop();
 
-        };
+        // };
 
 
 
