@@ -24,14 +24,23 @@
 
 // })
 
-$(function(){
-    $("button").click(function(){
-        $("div").animate({
-            left: '600px',
-            opacity: 0.2,
-            width: '200px',
-            height: '200px'}
-            , 3000 )
+// $(function(){
+//     $("button").click(function(){
+//         $("div").animate({
+//             left: '600px',
+//             opacity: 0.2,
+//             width: '200px',
+//             height: '200px'}
+//             , 3000 )
 
-    })
-})
+//     })
+// })
+
+$(function(){
+    $("#start").click(function(){
+        // var myVar = $("div").attr("style");
+        // console.log(myVar);
+        $("#p1").text("Voila mon nouveau texte");
+
+    });
+});
