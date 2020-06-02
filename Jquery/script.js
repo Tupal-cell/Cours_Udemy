@@ -36,11 +36,25 @@
 //     })
 // })
 
-$(function(){
-    $("#start").click(function(){
-        // var myVar = $("div").attr("style");
-        // console.log(myVar);
-        $("#p1").text("Voila mon nouveau texte");
+// $(function(){
+//     $("#start").click(function(){
+//         // var myVar = $("div").attr("style");
+//         // console.log(myVar);
+//         $("#p1").text("Voila mon nouveau texte");
 
-    });
-});
+//     });
+// });
+
+
+$(function(){
+    $("#but1").click(function()
+    {
+        $("#p1,#p2").toggleClass("red");
+    })
+    
+    //     $("#but2").click(function()
+    // {
+    //         $("#p1,#p2").removeClass("red");
+
+    // })
+})
