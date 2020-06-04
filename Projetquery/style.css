@@ -22,6 +22,7 @@ header
 }
 header h1
 {
+    font-family: 'Limelight', sans-serif;
     font-size: 40px;
     text-align: center;
     color: #fff;
@@ -41,11 +42,17 @@ header h1
 
 #main-menu ul li 
 {
-    
+    float: left;
+    width: 140px;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
 }
 
 .bw
 {
+    position: absolute;
+    left: 0px;
     width: 140px;
     height: 500px;
     cursor: pointer;
@@ -54,11 +61,15 @@ header h1
 }
 .color
 {
+    position: absolute;
+    left: 140px;
     width: 140px;
     height: 500px;
     cursor: pointer;
     background: url('assets/490af21e-5b50-42fe-84fc-ec794b6f579d.jpg');   
 }
+
+
 
 #part2 div
 {
@@ -77,8 +88,12 @@ header h1
     background-position: -560px 0px;
 }
 
+
+
 .description
 {
+    left: 140px;
+    position: absolute;
     width: 240px;
     height: 460px;
     padding: 20px;
@@ -87,6 +102,7 @@ header h1
 
 .description h2
 {
+    font-family: 'Limelight', sans-serif;
     padding-top: 20px;
     font-size: 30px;
     text-align: center;
@@ -95,12 +111,21 @@ header h1
 }
 .description h3
 {
+    font-family: 'Lobster', sans-serif;
     margin-top: 30px;
     padding: 10px;
     font-size: 26px;
     background: #d70000;
-    color: ;
-
-    
-    
+    color: #fff;
+    text-align: center;
+    text-shadow: 1px 1px 1px #0000;
+    border-radius: 5px;
+}
+.description p 
+{
+    font-family: 'Lobster', sans-serif;
+    padding-top: 35px;
+    font-size: 22px;
+    color: #000;
+    text-align: center;
 }
