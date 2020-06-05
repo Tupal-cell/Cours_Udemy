@@ -2,13 +2,24 @@ $(document).ready(function()
 {
     var $mainMenuItems = $("#main-menu ul").children("li"),
         totalMainMenuItems = $mainMenuItems.length,
-        openIndex = -1,
+        openIndex = 2,
 
         init = function(){
-            $mainMenuItems.children(".images").click(function(){
+            bindEvents();
+                if(validIndex(openIndex))
+                {
+                    animateItem($mainMenuItems.eq(openIndex), true, 700);   
+                }
+        },
+
+        bindEvents = function()
+        {
+            $mainMenuItems.children(".images").click(function()
+            {
                 var newIndex = $(this).parent().index();
                 $item = $mainMenuItems.eq(newIndex);
-                if(openIndex === newIndex){
+                if(openIndex === newIndex)
+                {
                     animateItem($item, false, 250);
                     openIndex = -1;
                 }
@@ -22,7 +33,20 @@ $(document).ready(function()
                     }
                 }
             });
+
+            $(".button").hover(
+            function(){
+                $(this).addClass("hovered");
+            },
+            function(){
+                $(this).removeClass("hovered");
+    
+    
+            }
+            );
         },
+
+
 
         validIndex = function(indexToCheck){
             return (indexToCheck >= 0) && (indexToCheck < totalMainMenuItems);
